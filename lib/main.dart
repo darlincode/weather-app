@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_new
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(new MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
           backgroundColor: Colors.blueGrey,
           appBar: AppBar(
-            title: Text('Weatherz'),
+            title: const Text('Weatherz'),
           ),
           body: Center(
               child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
@@ -55,7 +57,7 @@ class MyApp extends StatelessWidget {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(9.0),
-                child: Container(
+                child: SizedBox(
                   height: 200.0,
                   child: ListView.builder(
                       itemCount: 10,
@@ -66,9 +68,9 @@ class MyApp extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Text('New York',
+                                  const Text('New York',
                                       style:
-                                          new TextStyle(color: Colors.black)),
+                                          TextStyle(color: Colors.black)),
                                   Text('Rain',
                                       style: new TextStyle(
                                           color: Colors.black, fontSize: 24.0)),
