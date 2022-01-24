@@ -33,15 +33,15 @@ class MyApp extends StatelessWidget {
                         Text('72°F', style: new TextStyle(color: Colors.white)),
                         Image.network(
                             'https://openweathermap.org/img/w/01d.png'),
-                        Text('Jun 28, 2018',
+                        Text('oct 18, 2021',
                             style: new TextStyle(color: Colors.white)),
-                        Text('18:30',
+                        Text('04:20',
                             style: new TextStyle(color: Colors.white)),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(9.0),
                     child: IconButton(
                       icon: new Icon(Icons.refresh),
                       tooltip: 'Refresh',
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
             ),
             SafeArea(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(9.0),
                 child: Container(
                   height: 200.0,
                   child: ListView.builder(
