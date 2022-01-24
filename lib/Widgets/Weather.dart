@@ -1,8 +1,9 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:weatherz/models/WeatherData.dart';
 
 class Weather extends StatelessWidget {
-  const Weather({Key? key}) : super(key: key);
+  const Weather({Key? key, required WeatherData weather}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

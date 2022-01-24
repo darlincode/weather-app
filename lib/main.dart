@@ -1,30 +1,19 @@
 import 'package:flutter/material.dart';
-import 'Widgets/Weather.dart';
-import 'widgets/WeatherItem.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(new MyApp());
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() {
-    return MyAppState();
-  }
-}
-
-class MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Weather App',
+      title: 'W',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: Scaffold(
         backgroundColor: Colors.blueGrey,
         appBar: AppBar(
-          title: const Text('Weatherz'),
+          title: Text('Weatherz'),
         ),
         body: Center(
           child: Column(
@@ -34,16 +23,24 @@ class MyAppState extends State<MyApp> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Weather(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: <Widget>[
+                          Text('New York', style: new TextStyle(color: Colors.white)),
+                          Text('Rain', style: new TextStyle(color: Colors.white, fontSize: 32.0)),
+                          Text('72°F',  style: new TextStyle(color: Colors.white)),
+                          Image.network('https://openweathermap.org/img/w/01d.png'),
+                          Text('Jun 28, 2018', style: new TextStyle(color: Colors.white)),
+                          Text('18:30', style: new TextStyle(color: Colors.white)),
+                        ],
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: IconButton(
-                        icon: const Icon(Icons.refresh),
+                        icon: new Icon(Icons.refresh),
                         tooltip: 'Refresh',
-                        // ignore: avoid_returning_null_for_void
                         onPressed: () => null,
                         color: Colors.white,
                       ),
@@ -54,12 +51,27 @@ class MyAppState extends State<MyApp> {
               SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
+                  child: Container(
                     height: 200.0,
                     child: ListView.builder(
                         itemCount: 10,
                         scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => WeatherItem()
+                        itemBuilder: (context, index) => Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text('New York', style: new TextStyle(color: Colors.black)),
+                                Text('Rain', style: new TextStyle(color: Colors.black, fontSize: 24.0)),
+                                Text('72°F',  style: new TextStyle(color: Colors.black)),
+                                Image.network('https://openweathermap.org/img/w/01d.png'),
+                                Text('Jun 28, 2018', style: new TextStyle(color: Colors.black)),
+                                Text('18:30', style: new TextStyle(color: Colors.black)),
+                              ],
+                            ),
+                          ),
+                        )
                     ),
                   ),
                 ),
