@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'Widgets/Weather.dart';
 import 'widgets/WeatherItem.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
-    return new MyAppState();
+    return MyAppState();
   }
 }
 
@@ -22,7 +24,7 @@ class MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Colors.blueGrey,
         appBar: AppBar(
-          title: Text('Flutter Weather App'),
+          title: const Text('Weatherz'),
         ),
         body: Center(
           child: Column(
@@ -32,15 +34,16 @@ class MyAppState extends State<MyApp> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Weather(),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: IconButton(
-                        icon: new Icon(Icons.refresh),
+                        icon: const Icon(Icons.refresh),
                         tooltip: 'Refresh',
+                        // ignore: avoid_returning_null_for_void
                         onPressed: () => null,
                         color: Colors.white,
                       ),
@@ -51,7 +54,7 @@ class MyAppState extends State<MyApp> {
               SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
+                  child: SizedBox(
                     height: 200.0,
                     child: ListView.builder(
                         itemCount: 10,
