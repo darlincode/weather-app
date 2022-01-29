@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(9.0),
                     child: IconButton(
+                      // ignore: prefer_const_constructors
                       icon: new Icon(Icons.refresh),
                       tooltip: 'Refresh',
                       onPressed: () => null,
@@ -69,22 +70,16 @@ class MyApp extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   const Text('New York',
-                                      style:
-                                          TextStyle(color: Colors.black)),
+                                      style: TextStyle(color: Colors.black)),
                                   Text('Rain',
+                                      // ignore: prefer_const_constructors
                                       style: new TextStyle(
                                           color: Colors.black, fontSize: 24.0)),
                                   Text('72°F',
                                       style:
+                                          // ignore: prefer_const_constructors
                                           new TextStyle(color: Colors.black)),
-                                  Image.network(
-                                      'https://openweathermap.org/img/w/01d.png'),
-                                  Text('Jun 28, 2018',
-                                      style:
-                                          new TextStyle(color: Colors.black)),
-                                  Text('18:30',
-                                      style:
-                                          new TextStyle(color: Colors.black)),
+                                 
                                 ],
                               ),
                             ),
