@@ -2,9 +2,11 @@
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,16 +30,21 @@ class MyApp extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         Text('New York',
+                            // ignore: prefer_const_constructors
                             style: new TextStyle(color: Colors.white)),
                         Text('Rain',
+                            // ignore: prefer_const_constructors
                             style: new TextStyle(
                                 color: Colors.white, fontSize: 32.0)),
+                        // ignore: prefer_const_constructors
                         Text('72°F', style: new TextStyle(color: Colors.white)),
                         Image.network(
                             'https://openweathermap.org/img/w/01d.png'),
                         Text('oct 18, 2021',
+                            // ignore: prefer_const_constructors
                             style: new TextStyle(color: Colors.white)),
                         Text('04:20',
+                            // ignore: prefer_const_constructors
                             style: new TextStyle(color: Colors.white)),
                       ],
                     ),
@@ -48,6 +55,7 @@ class MyApp extends StatelessWidget {
                       // ignore: prefer_const_constructors
                       icon: new Icon(Icons.refresh),
                       tooltip: 'Refresh',
+                      // ignore: avoid_returning_null_for_void
                       onPressed: () => null,
                       color: Colors.white,
                     ),
