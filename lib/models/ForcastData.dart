@@ -1,6 +1,8 @@
 // ignore: file_names
+// ignore: file_names
 // ignore_for_file: unnecessary_new
 
+// ignore: unused_import
 import 'package:flutter/material.dart';
 import 'package:weatherz/models/WeatherData.dart';
 import 'Widgets/Weather.dart';
