@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
                                 color: Colors.white, fontSize: 32.0)),
                         // ignore: prefer_const_constructors
                         Text('72°F', style: new TextStyle(color: Colors.white)),
-                        Image.network(
+                        Image.network(      
                             'https://openweathermap.org/img/w/01d.png'),
                         Text('oct 18, 2021',
                             // ignore: prefer_const_constructors
