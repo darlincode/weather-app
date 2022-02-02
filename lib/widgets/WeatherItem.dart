@@ -17,8 +17,8 @@ class WeatherItem extends StatelessWidget {
             // ignore: prefer_const_constructors
             Text('72°F',  style: new TextStyle(color: Colors.black)),
             Image.network('https://openweathermap.org/img/w/01d.png'),
-            Text('Jun 28, 2018', style: new TextStyle(color: Colors.black)),
-            Text('18:30', style: new TextStyle(color: Colors.black)),
+            Text('Jun 28, 2022', style: new TextStyle(color: Colors.black)),
+            Text('20:30', style: new TextStyle(color: Colors.black)),
           ],
         ),
       ),
