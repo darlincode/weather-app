@@ -13,7 +13,7 @@ class WeatherItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('New York', style: new TextStyle(color: Colors.black)),
-            Text('Rain', style: new TextStyle(color: Colors.black, fontSize: 24.0)),
+            Text('Rain', style: new TextStyle(color: Colors.black, fontSize: 25.1)),
             // ignore: prefer_const_constructors
             Text('72°F',  style: new TextStyle(color: Colors.black)),
             Image.network('https://openweathermap.org/img/w/01d.png'),
