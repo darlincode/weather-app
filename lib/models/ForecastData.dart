@@ -1,12 +1,7 @@
-// ignore: file_names
-// ignore: file_names
-// ignore_for_file: unnecessary_new
+//import 'package:flutter_weather/models/WeatherData.dart';
+// ignore_for_file: prefer_collection_literals
 
-// ignore: unused_import
-import 'package:flutter/material.dart';
 import 'package:weatherz/models/WeatherData.dart';
-import 'Widgets/Weather.dart';
-import 'widgets/WeatherItem.dart';
 
 class ForecastData {
   final List list;
@@ -14,11 +9,12 @@ class ForecastData {
   ForecastData({required this.list});
 
   factory ForecastData.fromJson(Map<String, dynamic> json) {
-    List list = [];
+    // ignore: deprecated_member_use
+    List list = List.empty();
 
     for (dynamic e in json['list']) {
-      WeatherData w = new WeatherData(
-          date: new DateTime.fromMillisecondsSinceEpoch(e['dt'] * 1000, isUtc: false),
+      WeatherData w = WeatherData(
+          date: DateTime.fromMillisecondsSinceEpoch(e['dt'] * 1000, isUtc: false),
           name: json['city']['name'],
           temp: e['main']['temp'].toDouble(),
           main: e['weather'][0]['main'],
