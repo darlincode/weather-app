@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WeatherItem extends StatelessWidget {
+  const WeatherItem({Key? key, weather}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Card(

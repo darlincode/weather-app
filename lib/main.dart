@@ -9,9 +9,11 @@ import 'package:weatherz/Widgets/WeatherItem.dart';
 import 'package:weatherz/models/ForecastData.dart';
 import 'package:weatherz/models/WeatherData.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return MyAppState();
@@ -50,20 +52,21 @@ class MyAppState extends State<MyApp> {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(8.0),
+                    // ignore: unnecessary_null_comparison
                     child: weatherData != null
-                        ? Weather(weather: weatherData)
+                        ? Weather( weather: weatherData)
                         : Container(),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: isLoading
-                        ? CircularProgressIndicator(
+                        ? const CircularProgressIndicator(
                             strokeWidth: 2.0,
                             valueColor:
-                                new AlwaysStoppedAnimation(Colors.white),
+                                AlwaysStoppedAnimation(Colors.white),
                           )
                         : IconButton(
-                            icon: new Icon(Icons.refresh),
+                            icon: const Icon(Icons.refresh),
                             tooltip: 'Refresh',
                             onPressed: loadWeather,
                             color: Colors.white,
@@ -75,8 +78,9 @@ class MyAppState extends State<MyApp> {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
+                child: SizedBox(
                   height: 200.0,
+                  // ignore: unnecessary_null_comparison
                   child: forecastData != null
                       ? ListView.builder(
                           itemCount: forecastData.list.length,
@@ -96,8 +100,8 @@ class MyAppState extends State<MyApp> {
       isLoading = true;
     });
 
-    final lat = 40.730610;
-    final lon = -73.935242;
+    const lat = 40.730610;
+    const lon = -73.935242;
     final weatherResponse = await http.get(
         'https://api.openweathermap.org/data/2.5/weather?APPID=YOUR_APP_ID&lat=${lat.toString()}&lon=${lon.toString()}');
     final forecastResponse = await http.get(
@@ -107,9 +111,9 @@ class MyAppState extends State<MyApp> {
         forecastResponse.statusCode == 200) {
       return setState(() {
         weatherData =
-            new WeatherData.fromJson(jsonDecode(weatherResponse.body));
+            WeatherData.fromJson(jsonDecode(weatherResponse.body));
         forecastData =
-            new ForecastData.fromJson(jsonDecode(forecastResponse.body));
+            ForecastData.fromJson(jsonDecode(forecastResponse.body));
         isLoading = false;
       });
     }
